@@ -7,17 +7,47 @@
     <title>Pokedex LaunchX</title>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
-    <link rel="stylesheet" href="./poledex.css">
-    
+    <link rel="stylesheet" href="pokedex.css">
+    <script src="./pokedex.js"></script>
 </head>
 <body>
-    
-    <h1>Pokedex LaunchX</h1>
-    <input type="text" placeholder="pikachu" id="pokeName" name="pokeName">
-    <img src="./pokeball.png" alt="Pokemon" id="pokeImg" width="150px">
-    <button onclick="fetchPokemon()">Cambiar Imágen</button>
+    <div id="divContenedor" class="contenedor">
+        <div id="divFondo">
+            <button type="button" id="speaker" onclick="muteOrUnmute()">
+                <img src="speakerOn.png" id="imgSpeaker">
+            </button>
+            <h1>Pokedex LaunchX</h1>
+        </div>
+        <div id="divImagen">
+            <img id="pokeTrain">
+            <img src="./Signo.png" alt="" id="pokeImg">
+            <div class="plataforma"></div>
+            <!-- Nombre y tipo del pokemon -->
+            <div id='divNomTipFondo'><p></p>
+                <div id="divNomTip">
+                    <a font-weight:bold; > Nombre:</a><a id='nameEncontrado'></a>
+                    <a font-weight:bold;>Tipo:</a><a id='tipoEncontrado'></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="divMenu">
+            <div id='divInfoFondo'><p>
+                <div id='divInfo'>
+                    <a class="text" id="invText">Estadísticas: </a><a class='text2' id="textStats"></a><br><br>
+                    <a class="text" id="invText2">Movimientos: </a><a class='text2' id="textAbi"></a>
+                </div>
+            </div>
+            <div id='divBusquedaFondo'><p></p>    
+                <div id="divBusqueda">          
+                    <a id="buscar">Buscar</a>
+                    <input type="text" placeholder="pikachu" id="pokeName" name="pokeName">
+                    <p></p>
+                    <button class="btnClass" id="pokeBtn" onclick="pokeTrain(),setTimeout(() => fetchPokemon(), 1050);">Cambiar Imágen</button>
+                </div>
+            </div>
+        </div>
+
+    </div>>
 </body>
-<footer>
-    <script src="./pokedex.js"></script>
-</footer>
 </html>
